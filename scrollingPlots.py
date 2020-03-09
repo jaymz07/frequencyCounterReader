@@ -49,7 +49,7 @@ line, = ax.plot(times,data)
 ax.set_xlabel("Time (s)")
 ax.set_ylabel("Frequency (MHz)")
 
-while True:
+while plt.fignum_exists(1):
     recv = serDataToFloat(ser.read_until())
     print(recv)
     data.append(recv[0])
