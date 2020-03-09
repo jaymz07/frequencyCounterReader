@@ -43,9 +43,11 @@ for i in range(0,3):
     data.append(serDataToFloat(ser.read_until())[0])
     times.append(time.time()-timeStart)
 
-fig = plt.figure()
-ax = fig.subplots(1)
+fig, ax = plt.subplots(1)
 line, = ax.plot(times,data)
+
+ax.set_xlabel("Time (s)")
+ax.set_ylabel("Frequency (MHz)")
 
 while True:
     recv = serDataToFloat(ser.read_until())
