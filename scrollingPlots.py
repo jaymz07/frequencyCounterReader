@@ -48,7 +48,9 @@ line, = ax.plot(times,data)
 
 ax.set_xlabel("Time (s)")
 ax.set_ylabel("Frequency (MHz)")
+fig.show()
 
+#Check when figure window is closed
 while plt.fignum_exists(1):
     recv = serDataToFloat(ser.read_until())
     print(recv)
